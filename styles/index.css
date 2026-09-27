@@ -1,0 +1,254 @@
+body {
+    background-color: #F5F3EA;
+    margin: 0;
+    color: #1F3020;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+    background-color: #F5F3EA;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+    border-bottom: 1px solid #4F8A4C;
+
+    line-height: 1;
+}
+
+.header-links {
+    padding: 0px 40px
+}
+
+.header-rechts {
+    padding: 40px 20px;
+}
+
+.header-rechts a:not(.contact-button) {
+    position: relative;
+
+    text-decoration: none;
+    color: #1F3020;
+
+    margin-left: 20px;
+    
+}
+
+.header-rechts a:not(.contact-button)::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #4F8A4C;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+
+.header-rechts a:not(.contact-button):hover::after {
+    transform: scaleX(1);
+}
+
+
+.contact-button {
+    text-decoration: none;
+
+    color: #F5F3EA;
+    background-color: #4F8A4C;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.hero {
+    background-color: #DCE8D4;
+    min-height: calc(100vh - 350px);
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    border-bottom: 1px solid #4F8A4C;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.hero-buttons a:not(.contact-button) {
+    text-decoration: none;
+    border: 1px solid #4F8A4C;
+    padding: 10px 20px;
+
+    border-radius: 10px;
+    
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.over {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.over.geladen {
+    opacity: 1;
+}
+
+.over-foto img {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.over-tekst {
+    position: relative;
+    z-index: 1;
+}
+
+.over-tekst::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+    background-color: #4F8A4C;
+    opacity: 0.15;
+    border-radius: 50%;
+    filter:blur(70px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+}
+
+.projecten {
+    background-color: #DCE8D4;
+    text-align: center;
+    border-top: 1px solid #4F8A4C;
+    border-bottom: 1px solid #4F8A4C;
+
+}
+
+
+.projecten-kaarten {
+
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    gap: 100px;
+    justify-content: center;
+    
+}
+
+.project-card {
+    background-color: #4F8A4C;
+    text-decoration: none;
+    text-align: center;
+    height: 500px;
+    border-radius: 10px;
+    padding-top: 20px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-card a {
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out; 
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+section {
+    padding: 100px 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Bowlby One SC", sans-serif;
+    font-weight: 400;
+    color: #1F3020;
+}
+
+a,
+p {
+    font-family: "Josefin Sans", sans-serif;
+    color: #1F3020;
+}
+
+@media (max-width: 768px) {
+    .over {
+        grid-template-columns: 1fr;
+    }
+
+    .projecten-kaarten {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-button:hover {
+    background-color: #3B6B3A;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-button:hover {
+    background-color: #3B6B3A;
+    transition: background-color 0.3s ease-in-out;
+}
+
